@@ -1,4 +1,4 @@
-# Implementation visualCaptcha 5.0 with CleverStack
+# Implementation of visualCaptcha 5.0 with CleverStack
 
 [The fourth version of visualCaptcha](http://clevertech.biz/devblog/implement-captcha-php-project/ "visualCaptcha 4: Implement a better CAPTCHA in your PHP project") was really good: great security and innovative accessibility solution, mobile-friendly and retina-ready design, self-hosted and open-source!
 
@@ -30,9 +30,9 @@ visualCaptcha use [Bower](http://bower.io/) to provide a few frontend integratio
 - [jQuery plugin](https://github.com/emotionLoop/visualCaptcha-frontend-vanilla);
 - [Angular JS directive](https://github.com/emotionLoop/visualCaptcha-frontend-angular).
 
-### Enhanced UX and UI.
+### Enhanced UX and UI
 
-The UX and UI were improved for the new version of visualCaptcha. Also we have prepared several demo pages with using different backend and frontend technologies:
+The UX and UI were improved for the new version of visualCaptcha. Also we have prepared several demo pages using different backend and frontend technologies:
 
 - [PHP and jQuery Demo](http://demo.visualcaptcha.net/ "visualCaptcha PHP and jQuery Demo")
 - [Node.js and Vanilla JS Demo](http://node.demo.visualcaptcha.net/ "visualCaptcha Node.js and Vanilla JS Demo")
@@ -42,17 +42,17 @@ The UX and UI were improved for the new version of visualCaptcha. Also we have p
 
 ### New website
 
-It was created a [new web site](http://visualcaptcha.net "visualCaptcha - The best captcha alternative") with amazing fresh responsive design and retina-ready images.
+We've created a [new web site](http://visualcaptcha.net "visualCaptcha - The best captcha alternative") with amazing fresh responsive design and retina-ready images.
 
 ## Detailed implementation
 
-[CleverStack](http://cleverstack.io/) uses full-stack JavaScript technologies with Node JS and Angular JS. Because, the appropriate libraries are [Angular JS version of visualCaptcha](https://github.com/emotionLoop/visualCaptcha-frontend-angular) and [NPM package for Node JS](https://github.com/emotionLoop/visualCaptcha-npm).
+[CleverStack](http://cleverstack.io/) uses full-stack JavaScript technologies with Node JS and Angular JS. Thus the appropriate libraries are [Angular JS version of visualCaptcha](https://github.com/emotionLoop/visualCaptcha-frontend-angular) and [NPM package for Node JS](https://github.com/emotionLoop/visualCaptcha-npm).
 
-And, of course, we need to have installed [CleverStack CLI and created application](http://cleverstack.io/getting-started/).
+And, of course, we need installed [CleverStack CLI and created application](http://cleverstack.io/getting-started/).
 
 ### Backend implementation
 
-#### 1. Installation required npm modules with saving dependencies
+#### 1. Install required npm modules with saving dependencies
 
 In terminal open `backend` folder of application and run next installation command for visualCaptcha npm module:
 
@@ -60,25 +60,23 @@ In terminal open `backend` folder of application and run next installation comma
 npm install --save visualcaptcha
 ```
 
-As well we need a `client-sessions` module for visualCaptcha initialising, run next command to install it:
+As well we need a `client-sessions` module for visualCaptcha initialising, run the next command to install it:
 
 ```bash
 npm install --save client-sessions
 ```
 
-#### 2. Adding session support to application
+#### 2. Add session support to application
 
-In previous step we have installed `client-sessions` npm module.   And now we should initialise it correct into `backend/index.js` file. First of all add next line  in top of file to require module:
+In previous step we have installed `client-sessions` npm module.   And now we need to initialise it correct into `backend/index.js` file. First of all add next line on top of the file to require this module:
 
 ```javasctipt
 var sessions = require( 'client-sessions' );
 ```
 
-Then we need to add next code into `env.app.configure(function() { /* ... */ });` for initialisation the sessions:
+Then we need to add next code into `env.app.configure(function() { /* ... */ });` callback function to initialise the sessions:
 
 ```
-
-
 // Configure the app before routes
 env.app.configure(function() {
     
@@ -100,8 +98,8 @@ env.app.configure(function() {
 });
 ```
 
-#### 3. Creating CleverStack module for visualCaptcha.
-We need create a simple folder structure for visualCaptcha backend module inside the `backend/modules/` folder of the application:
+#### 3. Create CleverStack module for visualCaptcha
+We need to create a simple folder structure for visualCaptcha backend module inside the `backend/modules/` folder of the application:
 
 ```
 .
@@ -115,7 +113,7 @@ We need create a simple folder structure for visualCaptcha backend module inside
 
 Where:
 
-- **package.json** — is the main file for CleverStack initialisation and should looks like this one. Notice that name should be equal the visualCaptcha module folder name:
+- **package.json** — is the main file for CleverStack initialisation and should look like this one. Notice that name need to be equal to the visualCaptcha module folder name:
 
 ```json
 {
@@ -142,14 +140,7 @@ Where:
     "captcha"
   ],
   "main": "module.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "bugs": {
-    "url": ""
-  }
+  "devDependencies": {}
 }
 ```
 
@@ -161,10 +152,10 @@ var ModuleClass = require( 'classes' ).ModuleClass
 
 Module = ModuleClass.extend({});
 
-// name of module should be *equal* the module folder name: 'visualCaptcha-module'
+// name of module must be *equal* to the module folder name: 'visualCaptcha-module'
 module.exports = new Module( 'visualCaptcha-module', injector );
 ```
-Also we need to add name of our module into the `backend/package.json` file in `bundledDependencies` section for correct cleverStack initialisation:
+Also we need to add name of our module into the `backend/package.json` file in `bundledDependencies` section for correct cleverStack module initialisation:
 
 ```json
 "bundledDependencies": [
@@ -191,7 +182,7 @@ module.exports = function( app, CaptchaController ) {
 };
 ```
 
-- **controllers/CaptchaController.js** — main controller for visualCaptcha module. It has next structure:
+- **controllers/CaptchaController.js** — main controller for visualCaptcha module. It has the following structure:
 
 ```javascript
 module.exports = function() {
@@ -289,7 +280,7 @@ _getAudio: function( req, res, next ) {
 },
 ```
 
-**_trySubmission** — is a example function for visualCaptcha validation:
+**_trySubmission** — is an example function for visualCaptcha validation:
 
 ```javascript
 // Try to validate the captcha
@@ -358,7 +349,7 @@ Backend CleverStack module for visualCaptcha is done and implemented.
 
 ### Frontend implementation
 
-#### 1. Installation required bower package with saving dependencies
+#### 1. Install required bower package with saving dependencies
 
 In terminal open `frontend` folder of application and run next installation command for Angular JS version of visualCaptcha frontend library:
 
@@ -366,7 +357,7 @@ In terminal open `frontend` folder of application and run next installation comm
 bower install --save visualcaptcha.angular
 ```
 
-#### 2. Including visualcaptcha.angular library 
+#### 2. Include visualcaptcha.angular library 
 To include visualcaptcha.angular library we need to add alias for the visualcaptcha.angular library path into the `modules/main.js` file:
 
 ```javascript
@@ -378,7 +369,7 @@ visualCaptcha: '../components/visualcaptcha.angular/visualcaptcha.angular'
 },
 ```
 
-And then add `'visualCaptcha'` into require array:
+And then add `'visualCaptcha'` into Require JS dependensies array:
 
 ```javascript
 require([
@@ -399,10 +390,10 @@ require([
 ```
 We don't need a shim for visualCaptcha, because it supports AMD. 
 
-#### 3. Including visualCaptcha directive into the html
+#### 3. Include visualCaptcha directive into the html
 
-I'll use login form for example of visualCaptcha implementation.
-Login module is stored in `frontend/app/modules/cs_session` folder. There is a `frontend/app/modules/cs_session/views/login.html` view for presentation this module in the browser window. To add visual captcha on login form we need to add next code into the `login.html` file:
+We'll use login form for example of visualCaptcha implementation.
+Login module is stored in `frontend/app/modules/cs_session` folder. We use `frontend/app/modules/cs_session/views/login.html` file to present this module in the browser window. To add visual captcha on login form we need to add next code into the `login.html` file:
 
 ```html
 <form id="login" ng-submit="login()">
@@ -419,9 +410,9 @@ Login module is stored in `frontend/app/modules/cs_session` folder. There is a `
 </form>
 ```
 
-#### 4. Initialising visualCaptcha options
+#### 4. Initialise visualCaptcha options
 
-Login module uses `frontend/app/modules/cs_session/scripts/cs_login_controller.js` file to define login controller. To add `captchaOptions` variable to the login controller we need to add next code:
+Login module uses `frontend/app/modules/cs_session/scripts/cs_login_controller.js` file to define login controller. To add `captchaOptions` variable to the login controller we need to add the next code:
 
 ```javascript
 $scope.captchaOptions = {
@@ -439,7 +430,7 @@ $scope.captchaOptions = {
 };
 ```
 
-#### 5. Submitting and validation the visualCaptcha
+#### 5. Submit and validate the visualCaptcha
 
 We need to fix `$scope.login` function in the login controller (`frontend/app/modules/cs_session/scripts/cs_login_controller.js`) to add proper captcha data to submission. Replace it with next code:
 
@@ -458,7 +449,7 @@ $scope.login = function () {
 };
 ```
 
-Login function calls `CSSessionProvider.login` function (`frontend/app/modules/cs_session/scripts/cs_session_provider.js`) that returns the promise for login service. I've updated it a bit to pass a correct captcha data to the `$rootScope.$broadcast` method:
+Login function calls `CSSessionProvider.login` function (`frontend/app/modules/cs_session/scripts/cs_session_provider.js`) that returns the promise for login service. We've updated it a bit to pass a correct captcha data to the `$rootScope.$broadcast` method:
 
 ```javascript
 login: function (credentials) {
@@ -477,7 +468,7 @@ login: function (credentials) {
 },
 ```
 
-And as well I've updated listener for broadcast `'CSSessionProvider:loginFailure'` event in the login controller (`frontend/app/modules/cs_session/scripts/cs_login_controller.js`) to alert the visualCaptcha status (`valid` or `invalid`) and to refresh it:
+And as well we've updated listener for broadcast `'CSSessionProvider:loginFailure'` event in the login controller (`frontend/app/modules/cs_session/scripts/cs_login_controller.js`) to alert the visualCaptcha status (`valid` or `invalid`) and to refresh it:
 
 ```javascript
 $scope.$on('CSSessionProvider:loginFailure', function (event, data) {
