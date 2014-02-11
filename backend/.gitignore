@@ -1,0 +1,12 @@
+.nbrun
+.DS_Store
+npm-debug.log
+.netbeans.xml
+.idea
+config/local.json
+test-results.xml
+!.gitignore
+.*.swp
+docs
+local.json
+node_modules

@@ -1,0 +1,33 @@
+{
+  "name": "visualCaptcha-module",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {},
+  "author": {
+    "name": "Clevertech",
+    "email": "info@clevertech.biz",
+    "web": "http://www.clevertech.biz"
+  },
+  "collaborators": [
+    "Alexander Bykhov <alex.bykhov@clevertech.biz>"
+  ],
+  "description": "visualCaptcha module for the Cleverstack backend.",
+  "keywords": [
+    "cleverstack",
+    "cleverstack-module",
+    "cleverstack-backend",
+    "clevertech",
+    "backend",
+    "visualCaptcha",
+    "captcha"
+  ],
+  "main": "module.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  }
+}

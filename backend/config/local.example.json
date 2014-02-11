@@ -1,0 +1,8 @@
+{
+    "environmentName": "LOCAL",
+    "memcacheHost": "localhost:11211",
+
+    "mongoose": {
+        "uri": "mongodb://localhost/database"
+    }
+}

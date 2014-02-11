@@ -1,0 +1,28 @@
+before_script:
+  - npm install -g grunt-cli
+
+script:
+  - "npm run test"
+
+notifications:
+  email:
+    - cleverstack@github.com
+  irc:
+    - "chat.freenode.net#cleverstack"
+
+env:
+  - NODE_ENV=prod NODE_PATH=./lib/:./modules/
+
+language: node_js
+
+node_js:
+  - "0.8"
+  - "0.10"
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - node_modules

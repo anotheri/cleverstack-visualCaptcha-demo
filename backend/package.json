@@ -1,0 +1,63 @@
+{
+  "main": "app.js",
+  "name": "cleverstack-node-seed",
+  "version": "0.0.5",
+  "author": {
+    "name": "Clevertech",
+    "email": "info@clevertech.biz",
+    "web": "http://www.clevertech.biz"
+  },
+  "collaborators": [
+    "Richard Gustin <richard@clevertech.biz>",
+    "Dmitry Bashkatov <dmitry@clevertech.biz>",
+    "Leandro Ostera <leostera@gmail.com>"
+  ],
+  "description": "Cleverstack Node-Seed",
+  "keywords": [
+    "cleverstack",
+    "clevertech",
+    "cleverstack-seed"
+  ],
+  "scripts": {
+    "start": "grunt",
+    "setup": "npm i; grunt db;",
+    "test": "grunt test --verbose"
+  },
+  "dependencies": {
+    "client-sessions": "0.5.x",
+    "visualcaptcha": ">= 0.0.2",
+    "express": "~3.4.7",
+    "clever-controller": "~1.0.2",
+    "nconf": "~0.6.9",
+    "uberclass": "~1.0.1",
+    "debug": "~0.7.2",
+    "matchdep": "~0.3.0",
+    "async": "~0.2.9",
+    "underscore": "~1.5.2",
+    "q": "~1.0.0",
+    "i": "~0.3.2",
+    "deepmerge": "~0.2.7",
+    "should": "~3.1.2",
+    "cors": "~2.1.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "",
+    "grunt-contrib-clean": "",
+    "grunt-contrib-jshint": "",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-mocha-test": "",
+    "grunt-nodemon": "",
+    "matchdep": "",
+    "mocha": "",
+    "chai": "",
+    "sinon": "",
+    "karma": "",
+    "supertest": "",
+    "grunt-concurrent": "~0.3.0",
+    "grunt-exec": "~0.4.2",
+    "should": "~2.1.1"
+  },
+  "bundledDependencies": [
+    "visualCaptcha-module"
+  ]
+}
